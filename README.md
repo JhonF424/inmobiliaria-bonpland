@@ -20,9 +20,9 @@ El usuario podrá:
 + Backend: 
 	+ NodeJS / ExpressJS
 + DB:
-	+ MongoDB 
+	+ PostgreSQL
 + Frontend:
-	+ Angular & Angular Material
+	+ React & Material UI
 	
 ---
 #### Información importante: 
