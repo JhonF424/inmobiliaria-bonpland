@@ -1,10 +1,9 @@
-const express = require('express');
-const app = express();
+require("dotenv").config();
+const app = require("./src/app");
+const { connection } = require("./src/db");
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-app.listen(3000, () => {
-    console.log('El servidor está escuchando en el puerto 3000.');
+connection.sync({ force: true }).then(() => {
+    app.listen(3001, () => {
+        console.log('El servidor está escuchando en el puerto: ' + 3001);
+    });
 });
