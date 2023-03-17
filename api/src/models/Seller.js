@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Sequelize } = require('sequelize');
 
 module.exports = (sequelize) => {
   sequelize.define('seller', {
@@ -15,6 +15,13 @@ module.exports = (sequelize) => {
     },
     phone: {
         type: DataTypes.STRING
+    },
+    propertie: {
+      type: Sequelize.UUIDV4,
+      references: {
+        model: 'Property',
+        key: 'id'
+      }
     }
   }, {
     timestamps: false

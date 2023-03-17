@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Sequelize } = require('sequelize');
 
 module.exports = (sequelize) => {
   sequelize.define('property', {
@@ -37,6 +37,20 @@ module.exports = (sequelize) => {
     },
     propertyType: {
       type: DataTypes.ENUM("House", "Department", "Shop")
+    },
+    contract: {
+      type: Sequelize.UUIDV4,
+      references: {
+        model: 'Contract',
+        key: 'id'
+      }
+    },
+    state: {
+      type: Sequelize.UUIDV4,
+      references: {
+        model: 'State',
+        key: 'id'
+      }
     }
   }, {
     timestamps: false
